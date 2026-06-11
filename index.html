@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Химияны оқытудың қазіргі технологиялары</title>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.13),transparent 32%),
+        radial-gradient(circle at top right,rgba(14,165,233,.14),transparent 34%),
+        linear-gradient(135deg,#f0fdf4 0%,#f8fafc 48%,#ecfeff 100%);
+      color:#172033;
+      line-height:1.65;
+      padding-bottom:40px;
+    }
+    .page{max-width:1160px;margin:0 auto;padding:14px}
+    .hero{
+      border-radius:30px;
+      padding:30px 18px;
+      color:white;
+      background:linear-gradient(135deg,#16a34a,#0891b2,#2563eb);
+      box-shadow:0 18px 45px rgba(14,165,233,.22);
+      margin-bottom:14px;
+    }
+    .hero-badge{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.28);
+      font-size:13px;
+      font-weight:850;
+      margin-bottom:12px;
+    }
+    .hero h1{
+      font-size:clamp(25px,5vw,44px);
+      line-height:1.08;
+      margin-bottom:12px;
+      letter-spacing:-.04em;
+    }
+    .hero p{
+      max-width:930px;
+      font-size:clamp(15px,2.5vw,18px);
+      opacity:.96;
+      margin-bottom:16px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    .hero-card{
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:18px;
+      padding:12px;
+      min-height:84px;
+    }
+    .hero-card b{display:block;font-size:15px;margin-bottom:4px}
+    .hero-card span{font-size:13px;opacity:.92}
+
+    .rights{
+      margin:12px 0 16px;
+      border-radius:18px;
+      padding:13px 14px;
+      background:#ecfdf5;
+      border:1px solid #bbf7d0;
+      color:#14532d;
+      font-size:14px;
+      font-weight:750;
+    }
+
+    .top-nav-wrap{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(240,253,244,.9);
+      backdrop-filter:blur(14px);
+      padding:8px 0;
+      margin-bottom:16px;
+    }
+    .top-nav{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:4px 2px 8px;
+    }
+    .top-nav a{
+      flex:0 0 auto;
+      text-decoration:none;
+      color:#166534;
+      background:rgba(255,255,255,.96);
+      border:1px solid #bbf7d0;
+      border-radius:999px;
+      padding:9px 12px;
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .top-nav a:hover{background:#dcfce7}
+
+    .intro{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .intro-card,.study-block{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(34,197,94,.18);
+      box-shadow:0 16px 38px rgba(34,197,94,.08);
+    }
+    .intro-card{
+      border-radius:22px;
+      padding:18px;
+    }
+    .intro-card h2{
+      font-size:21px;
+      margin-bottom:10px;
+      color:#166534;
+    }
+    .intro-card p{
+      margin-bottom:10px;
+      color:#334155;
+      font-size:15px;
+    }
+    .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      border-radius:999px;
+      padding:7px 10px;
+      background:#dcfce7;
+      color:#166534;
+      border:1px solid #bbf7d0;
+      font-size:12.5px;
+      font-weight:820;
+    }
+
+    .study-block{
+      scroll-margin-top:92px;
+      border-radius:24px;
+      margin:18px 0;
+      overflow:hidden;
+    }
+    .study-block-header{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px;
+      background:linear-gradient(135deg,#dcfce7,#cffafe,#dbeafe);
+      border-bottom:1px solid rgba(34,197,94,.12);
+    }
+    .block-number{
+      flex:0 0 auto;
+      width:46px;
+      height:46px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      color:white;
+      background:linear-gradient(135deg,#16a34a,#0891b2,#2563eb);
+      font-size:21px;
+      font-weight:950;
+    }
+    .study-block-header h2{
+      font-size:clamp(20px,3.2vw,28px);
+      color:#166534;
+      line-height:1.18;
+      margin-bottom:6px;
+    }
+    .study-block-header p{color:#475569;font-size:14.5px}
+
+    .mini-tabs{
+      display:flex;
+      gap:7px;
+      overflow-x:auto;
+      padding:12px 14px;
+      background:#f8fafc;
+      border-bottom:1px solid #e2e8f0;
+    }
+    .mini-tabs button{
+      flex:0 0 auto;
+      border:none;
+      border-radius:999px;
+      padding:9px 13px;
+      background:#e2e8f0;
+      color:#334155;
+      font-weight:880;
+      font-size:13px;
+      cursor:pointer;
+    }
+    .mini-tabs button.active{
+      background:linear-gradient(135deg,#16a34a,#0891b2,#2563eb);
+      color:white;
+    }
+
+    .tab-content{display:none;padding:16px}
+    .tab-content.active{display:block}
+
+    details{
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:16px;
+      padding:13px 14px;
+      margin-bottom:10px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:#166534;
+      font-size:15.5px;
+    }
+    details p{margin-top:9px;color:#334155;font-size:15px}
+    .source-small{
+      margin-top:8px;
+      color:#64748b;
+      font-size:12px;
+      font-style:italic;
+    }
+
+    .formula-list,.term-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+    .formula{
+      background:#f8fafc;
+      border:1px solid #cbd5e1;
+      border-left:5px solid #16a34a;
+      border-radius:16px;
+      padding:12px;
+      font-weight:850;
+      color:#0f172a;
+      overflow-x:auto;
+    }
+    .term{
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:12px;
+    }
+    .term b{color:#166534;display:block;margin-bottom:5px}
+    .term p{color:#475569;font-size:14.5px}
+
+    .question{
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:18px;
+      padding:14px;
+      margin-bottom:13px;
+    }
+    .question p{font-weight:900;color:#0f172a;margin-bottom:10px}
+    .question-note{
+      display:inline-block;
+      margin-bottom:8px;
+      border-radius:999px;
+      padding:5px 9px;
+      background:#dcfce7;
+      color:#166534;
+      font-size:12px;
+      font-weight:850;
+    }
+    .option{
+      display:block;
+      border:1px solid #dbe3ec;
+      border-radius:14px;
+      padding:10px 11px;
+      margin:8px 0;
+      cursor:pointer;
+      background:#f8fafc;
+      color:#334155;
+      font-size:14.5px;
+    }
+    .option input{margin-right:8px;transform:translateY(1px)}
+    .option.correct{border-color:#16a34a;background:#dcfce7;color:#14532d;font-weight:800}
+    .option.wrong{border-color:#dc2626;background:#fee2e2;color:#7f1d1d;font-weight:800}
+
+    .explain{
+      display:none;
+      margin-top:10px;
+      border-radius:14px;
+      padding:11px;
+      background:#ecfdf5;
+      border:1px solid #bbf7d0;
+      color:#14532d;
+      font-size:14px;
+    }
+    .explain.show{display:block}
+
+    .check-btn{
+      display:block;
+      width:100%;
+      border:none;
+      border-radius:18px;
+      padding:14px 16px;
+      margin-top:14px;
+      background:linear-gradient(135deg,#16a34a,#0891b2,#2563eb);
+      color:white;
+      font-size:16px;
+      font-weight:950;
+      cursor:pointer;
+      box-shadow:0 14px 30px rgba(34,197,94,.22);
+    }
+    .result{
+      display:none;
+      margin-bottom:14px;
+      border-radius:18px;
+      padding:14px;
+      background:#ecfdf5;
+      border:1px solid #bbf7d0;
+      color:#14532d;
+    }
+    .result.show{display:block}
+    .score{font-size:26px;font-weight:950;margin-bottom:4px}
+
+    .copyright-note{
+      margin-top:22px;
+      border-radius:18px;
+      padding:14px;
+      background:#ecfdf5;
+      border:1px solid #bbf7d0;
+      color:#14532d;
+      font-size:14px;
+      font-weight:750;
+      text-align:center;
+    }
+    footer{text-align:center;margin:18px 0 8px;color:#64748b;font-size:13px}
+
+    @media(max-width:760px){
+      .page{padding:10px}
+      .hero{border-radius:22px;padding:22px 15px}
+      .hero-grid,.intro,.formula-list,.term-list{grid-template-columns:1fr}
+      .study-block-header{gap:10px;padding:15px}
+      .block-number{width:40px;height:40px;border-radius:14px;font-size:19px}
+      .tab-content{padding:13px}
+      .top-nav a{font-size:12.5px;padding:8px 10px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="hero">
+      <div class="hero-badge">Құрманәлиев М.Қ. · Химияны оқытудың қазіргі технологиялары · 2016</div>
+      <h1>Химияны оқытудың қазіргі технологиялары</h1>
+      <p>
+        Бұл сайт Құрманәлиев М.Қ. еңбегіндегі химияны оқыту технологиялары,
+        педагогикалық технология ұғымы, технологияны таңдау, сабақта қолдану,
+        оқушы әрекетін ұйымдастыру және оқу нәтижесін бағалау тақырыптарын
+        КТ форматына сай қайталауға арналған.
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <b>Технология</b>
+          <span>Оқыту үдерісін жүйелі жобалау</span>
+        </div>
+        <div class="hero-card">
+          <b>Әдістеме</b>
+          <span>Мақсат, мазмұн, әдіс, нәтиже</span>
+        </div>
+        <div class="hero-card">
+          <b>Химия сабағы</b>
+          <span>Эксперимент, есеп, химиялық тіл</span>
+        </div>
+        <div class="hero-card">
+          <b>Нәтиже</b>
+          <span>Құзыреттілік және оқу жетістігі</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="rights">
+      © Назерке. Барлық құқық қорғалған. Материалды рұқсатсыз көшіруге,
+      сатуға, қайта таратуға немесе коммерциялық мақсатта қолдануға болмайды.
+    </div>
+
+    <div class="top-nav-wrap">
+      <nav class="top-nav">
+        <a href="#block1">1. Педагогикалық технология</a>
+        <a href="#block2">2. Технологияларды жіктеу</a>
+        <a href="#block3">3. Бағдарламалап және дербес оқыту</a>
+        <a href="#block4">4. Модульдік, жобалық, проблемалық оқыту</a>
+        <a href="#block5">5. АКТ, ойын және химия сабағы</a>
+        <a href="#block6">6. Жинақ тест</a>
+      </nav>
+    </div>
+
+    <section class="intro">
+      <div class="intro-card">
+        <h2>Дереккөз</h2>
+        <p>
+          Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”.
+          Оқу құралы. Алматы: Альманах, 2016.
+        </p>
+      </div>
+
+      <div class="intro-card">
+        <h2>Сайт бағыты</h2>
+        <p>
+          Негізгі мақсат — қазіргі педагогикалық технологияларды химия сабағында
+          қолдану логикасын түсіну: мақсат қою, технология таңдау, оқушы әрекетін
+          ұйымдастыру, химиялық эксперимент пен есепті технологиялық тұрғыдан
+          жоспарлау, нәтижені бағалау.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Педагогикалық технология</span>
+          <span class="tag">Химияны оқыту</span>
+          <span class="tag">Бағдарламалап оқыту</span>
+          <span class="tag">Модульдік оқыту</span>
+          <span class="tag">Жобалық оқыту</span>
+          <span class="tag">Проблемалық оқыту</span>
+          <span class="tag">АКТ</span>
+          <span class="tag">Ойын технологиясы</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="block1" class="study-block">
+      <div class="study-block-header">
+        <div class="block-number">1</div>
+        <div>
+          <h2>Педагогикалық технология ұғымы және химияны оқытудағы орны</h2>
+          <p>
+            Педагогикалық технологияның мәні, оқыту технологиясының құрылымы,
+            мақсат-мазмұн-әдіс-нәтиже байланысы және химия пәніндегі қолданылуы.
+          </p>
+        </div>
+      </div>
+
+      <div class="mini-tabs">
+        <button class="active" onclick="openTab(event, 'block1', 'theory')">Теория</button>
+        <button onclick="openTab(event, 'block1', 'formula')">Тірек</button>
+        <button onclick="openTab(event, 'block1', 'terms')">Термин</button>
+        <button onclick="openTab(event, 'block1', 'test')">Тест</button>
+      </div>
+
+      <div class="tab-content active" data-tab="theory">
+        <details open>
+          <summary>Педагогикалық технологияның мәні</summary>
+          <p>
+            Педагогикалық технология — оқыту мақсатына жетуді алдын ала жобалайтын,
+            оқу мазмұнын, әдістерді, оқушы әрекетін, мұғалім әрекетін және нәтижені
+            өзара байланыстыратын жүйе. Ол сабақтағы әрекеттерді кездейсоқ емес,
+            мақсатқа сай, жүйелі және нәтижеге бағытталған түрде ұйымдастыруға
+            мүмкіндік береді.
+          </p>
+          <div class="source-small">
+            Дереккөз: Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”, 2016.
+          </div>
+        </details>
+
+        <details>
+          <summary>Оқыту технологиясының құрылымы</summary>
+          <p>
+            Оқыту технологиясы бірнеше құрамдас бөліктен тұрады: мақсат, мазмұн,
+            әдіс, форма, құрал, оқушы әрекеті, мұғалім әрекеті және бағалау.
+            Бұл бөліктер бір-бірінен бөлек емес, сабақ нәтижесіне бағытталған
+            біртұтас жүйе ретінде қарастырылады.
+          </p>
+        </details>
+
+        <details>
+          <summary>Химияны оқытудағы технологияның орны</summary>
+          <p>
+            Химия пәнінде оқыту технологиясы тәжірибе, есеп шығару, химиялық тіл,
+            реакция теңдеуі, зат қасиеттерін түсіндіру және қауіпсіздік талаптарын
+            жүйелі ұйымдастыруға көмектеседі. Технология сабақта оқушының белсенді
+            әрекетін күшейтеді.
+          </p>
+        </details>
+
+        <details>
+          <summary>Мақсат пен нәтиже байланысы</summary>
+          <p>
+            Технологиялық тұрғыдан ұйымдастырылған сабақта мақсат нақты қойылады,
+            тапсырмалар сол мақсатқа сай таңдалады, ал бағалау күтілетін нәтижені
+            анықтауға бағытталады. Сондықтан технология оқыту үдерісінің барлық
+            кезеңін бір мақсатқа бағындырады.
+          </p>
+        </details>
+
+        <details>
+          <summary>Мұғалім мен оқушы рөлі</summary>
+          <p>
+            Қазіргі технологияларда мұғалім дайын білімді жеткізуші ғана емес,
+            оқу әрекетін ұйымдастырушы, бағыттаушы және нәтижені талдаушы рөл
+            атқарады. Оқушы білімді қабылдап қана қоймай, талдайды, салыстырады,
+            дәлелдейді, тәжірибе жасайды және қорытынды шығарады.
+          </p>
+        </details>
+
+        <details>
+          <summary>КТ үшін маңызды тұжырым</summary>
+          <p>
+            Педагогикалық технология — сабақтағы әдістердің жиынтығы емес,
+            мақсаттан нәтижеге дейінгі оқыту үдерісін жүйелі жобалау. Химияда
+            ол эксперимент, есеп, химиялық тіл және оқушы әрекетін бір жүйеге
+            келтіреді.
+          </p>
+        </details>
+      </div>
+
+      <div class="tab-content" data-tab="formula">
+        <div class="formula-list">
+          <div class="formula">Педагогикалық технология → мақсат + мазмұн + әдіс + нәтиже</div>
+          <div class="formula">Оқыту технологиясы → алдын ала жобаланған оқу үдерісі</div>
+          <div class="formula">Мақсат → тапсырма → әрекет → бағалау → нәтиже</div>
+          <div class="formula">Химияда технология → эксперимент + есеп + химиялық тіл</div>
+          <div class="formula">Мұғалім рөлі → ұйымдастыру + бағыттау + талдау</div>
+          <div class="formula">Оқушы рөлі → орындау + талдау + дәлелдеу + қорытынды</div>
+          <div class="formula">Технология тиімділігі → нәтижеге бағытталу</div>
+          <div class="formula">Сабақ жүйесі → форма + құрал + әдіс + бағалау</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="terms">
+        <div class="term-list">
+          <div class="term"><b>Педагогикалық технология</b><p>Оқыту мақсатына жетуді жүйелі жобалайтын педагогикалық әрекет жүйесі.</p></div>
+          <div class="term"><b>Оқыту технологиясы</b><p>Мақсат, мазмұн, әдіс, құрал, әрекет және нәтижені байланыстыратын оқу үдерісін ұйымдастыру жолы.</p></div>
+          <div class="term"><b>Технологиялық тәсіл</b><p>Оқу әрекетін алдын ала жоспарланған кезеңдер мен нәтижеге сай ұйымдастыру.</p></div>
+          <div class="term"><b>Оқу нәтижесі</b><p>Оқушының сабақ соңында меңгеретін білім, білік, дағды және әрекет деңгейі.</p></div>
+          <div class="term"><b>Оқушы әрекеті</b><p>Оқу мақсатына жету үшін оқушы орындайтын танымдық және практикалық жұмыс.</p></div>
+          <div class="term"><b>Әдістемелік жүйе</b><p>Мақсат, мазмұн, әдіс, форма, құрал және нәтиженің өзара байланысы.</p></div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="test">
+        <div id="block1Result" class="result"></div>
+
+        <div class="question" data-answer="2">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>1. Педагогикалық технологияның мәнін ең дәл сипаттайтын жауап:</p>
+          <label class="option"><input type="radio" name="q1b1" value="0"> Оқу мазмұнын пәндік ұғымдар бойынша жүйелеп түсіндіру әдісі</label>
+          <label class="option"><input type="radio" name="q1b1" value="1"> Сабақта қолданылатын жеке әдістер мен көрнекіліктердің жиынтығы</label>
+          <label class="option"><input type="radio" name="q1b1" value="2"> Оқыту мақсатына жетуді алдын ала жобалайтын жүйелі педагогикалық әрекет</label>
+          <label class="option"><input type="radio" name="q1b1" value="3"> Оқушы білімін бақылауға арналған тапсырмалар жүйесін құрастыру</label>
+          <label class="option"><input type="radio" name="q1b1" value="4"> Химиялық теорияларды сабақ мазмұнына сәйкес ретпен орналастыру</label>
+          <div class="explain">Дұрыс жауап: C. Педагогикалық технология оқыту үдерісін мақсаттан нәтижеге дейін жүйелі жобалауға негізделеді.</div>
+        </div>
+
+        <div class="question" data-answer="0,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>2. Оқыту технологиясының негізгі құрамдас бөліктерін таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q1b2" value="0"> Оқыту мақсаты мен күтілетін нәтиже</label>
+          <label class="option"><input type="checkbox" name="q1b2" value="1"> Химия курсының тарихи қалыптасу кезеңдері</label>
+          <label class="option"><input type="checkbox" name="q1b2" value="2"> Пәндік терминдердің анықтамалық жүйесі</label>
+          <label class="option"><input type="checkbox" name="q1b2" value="3"> Оқу мазмұны, әдіс, форма және құрал</label>
+          <label class="option"><input type="checkbox" name="q1b2" value="4"> Оқулық тарауларының баспа құрылымы</label>
+          <label class="option"><input type="checkbox" name="q1b2" value="5"> Мұғалім мен оқушы әрекеті және бағалау</label>
+          <div class="explain">Дұрыс жауаптар: A, D, F. Технология мақсаты, мазмұны, әдісі, формасы, құралы, әрекеті және бағалауымен сипатталады.</div>
+        </div>
+
+        <div class="question" data-answer="1">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>3. Химияны оқытуда педагогикалық технологияның ерекше маңызы неде?</p>
+          <label class="option"><input type="radio" name="q1b3" value="0"> Химиялық ұғымдарды анықтамалық ретпен жаттауға мүмкіндік береді</label>
+          <label class="option"><input type="radio" name="q1b3" value="1"> Эксперимент, есеп, химиялық тіл және оқушы әрекетін жүйелі ұйымдастырады</label>
+          <label class="option"><input type="radio" name="q1b3" value="2"> Оқулықтағы теориялық мәтінді толық баяндауға жағдай жасайды</label>
+          <label class="option"><input type="radio" name="q1b3" value="3"> Сабақ мазмұнын ғылыми теориялардың дамуымен байланыстырады</label>
+          <label class="option"><input type="radio" name="q1b3" value="4"> Пәндік терминдерді сыныптар бойынша салыстыруға бағыттайды</label>
+          <div class="explain">Дұрыс жауап: B. Химияда технология экспериментті, есепті, химиялық тілді және оқушы әрекетін бір жүйеге біріктіреді.</div>
+        </div>
+
+        <div class="question" data-answer="1,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>4. Қазіргі оқыту технологияларында оқушы әрекетіне тән белгілерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q1b4" value="0"> Дайын теориялық мәтінді құрылым бойынша қайталау</label>
+          <label class="option"><input type="checkbox" name="q1b4" value="1"> Тапсырманы орындау арқылы білімді қолдану</label>
+          <label class="option"><input type="checkbox" name="q1b4" value="2"> Химиялық құбылысты талдап, дәлел келтіру</label>
+          <label class="option"><input type="checkbox" name="q1b4" value="3"> Оқу мазмұнын мұғалім түсіндірген ретпен қабылдау</label>
+          <label class="option"><input type="checkbox" name="q1b4" value="4"> Тәжірибе немесе есеп нәтижесі бойынша қорытынды жасау</label>
+          <label class="option"><input type="checkbox" name="q1b4" value="5"> Пәндік терминдерді анықтама ретінде көшіріп жазу</label>
+          <div class="explain">Дұрыс жауаптар: B, C, E. Қазіргі технологияларда оқушы білімді қолданады, талдайды, дәлелдейді және қорытынды жасайды.</div>
+        </div>
+
+        <div class="question" data-answer="4">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>5. Технологиялық тұрғыдан ұйымдастырылған сабақта бағалау қандай қызмет атқарады?</p>
+          <label class="option"><input type="radio" name="q1b5" value="0"> Оқушыларды жалпы үлгерім деңгейі бойынша салыстыруға мүмкіндік береді</label>
+          <label class="option"><input type="radio" name="q1b5" value="1"> Сабақ мазмұнын теориялық бөлімдер бойынша топтастырады</label>
+          <label class="option"><input type="radio" name="q1b5" value="2"> Оқу материалының көлемін сабақ кезеңдерімен сәйкестендіреді</label>
+          <label class="option"><input type="radio" name="q1b5" value="3"> Мұғалім қолданған әдістердің атауын нақтылайды</label>
+          <label class="option"><input type="radio" name="q1b5" value="4"> Күтілетін нәтижеге жету деңгейін анықтайды</label>
+          <div class="explain">Дұрыс жауап: E. Технологиялық сабақта бағалау оқушының күтілетін нәтижеге жету деңгейін анықтайды.</div>
+        </div>
+
+        <button class="check-btn" onclick="checkBlock('block1')">Тестті тексеру</button>
+      </div>
+    </section>
+        <section id="block2" class="study-block">
+      <div class="study-block-header">
+        <div class="block-number">2</div>
+        <div>
+          <h2>Химияны оқыту технологияларын жіктеу және таңдау</h2>
+          <p>
+            Оқыту технологияларын жіктеу, технологияны сабақ мақсатына сай таңдау,
+            химия мазмұнына бейімдеу, оқушы деңгейін ескеру және нәтижеге бағыттау.
+          </p>
+        </div>
+      </div>
+
+      <div class="mini-tabs">
+        <button class="active" onclick="openTab(event, 'block2', 'theory')">Теория</button>
+        <button onclick="openTab(event, 'block2', 'formula')">Тірек</button>
+        <button onclick="openTab(event, 'block2', 'terms')">Термин</button>
+        <button onclick="openTab(event, 'block2', 'test')">Тест</button>
+      </div>
+
+      <div class="tab-content active" data-tab="theory">
+        <details open>
+          <summary>Оқыту технологияларын жіктеу</summary>
+          <p>
+            Химияны оқытуда қолданылатын технологиялар мақсатына, оқушы әрекетінің
+            сипатына, оқу мазмұнын ұйымдастыруына және нәтижені бағалау жолына қарай
+            жіктеледі. Әр технология белгілі бір оқу жағдайында тиімді болады:
+            біреуі білімді жүйелеуге, біреуі зерттеуге, біреуі оқушы дербестігін
+            дамытуға, біреуі практикалық қолдануға бағытталады.
+          </p>
+          <div class="source-small">
+            Дереккөз: Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”, 2016.
+          </div>
+        </details>
+
+        <details>
+          <summary>Технологияны таңдау шарттары</summary>
+          <p>
+            Технологияны таңдау оқу мақсатына, тақырып мазмұнына, оқушының жас және
+            дайындық деңгейіне, сабақ уақытына, ресурстарға, химиялық эксперимент
+            мүмкіндігіне және күтілетін нәтижеге байланысты. Бір технология барлық
+            сабаққа бірдей қолданылмайды.
+          </p>
+        </details>
+
+        <details>
+          <summary>Химия мазмұнына бейімдеу</summary>
+          <p>
+            Химия сабағында технологияны қолданғанда пәннің ерекшелігі ескеріледі:
+            заттар мен реакциялар, тәжірибе, қауіпсіздік, есеп шығару, формула,
+            теңдеу, химиялық тіл және нақты өмірмен байланыс. Сондықтан технология
+            химиялық мазмұнды жеңілдетпей, оны түсінуге және қолдануға бағытталуы керек.
+          </p>
+        </details>
+
+        <details>
+          <summary>Оқушы деңгейін ескеру</summary>
+          <p>
+            Технология оқушының дайындық деңгейіне сәйкес болуы қажет. Егер оқушылар
+            жаңа ұғымды енді меңгеріп жатса, мұғалім бағыттаушы қолдауды күшейтеді.
+            Егер оқушылардың базалық білімі жеткілікті болса, зерттеу, жоба,
+            проблемалық тапсырма сияқты күрделі технологияларды қолдануға болады.
+          </p>
+        </details>
+
+        <details>
+          <summary>Технология тиімділігін бағалау</summary>
+          <p>
+            Технология тиімділігі қолданылған әдістің атауымен емес, оқушының оқу
+            нәтижесімен анықталады. Егер оқушы химиялық құбылысты түсіндірсе,
+            реакция теңдеуін қолданса, есепті негіздесе, тәжірибе нәтижесін талдаса,
+            технология өз мақсатына жеткен деп қарастыруға болады.
+          </p>
+        </details>
+      </div>
+
+      <div class="tab-content" data-tab="formula">
+        <div class="formula-list">
+          <div class="formula">Технологияны таңдау → мақсат + мазмұн + оқушы деңгейі</div>
+          <div class="formula">Химия мазмұны → ұғым + тәжірибе + есеп + теңдеу</div>
+          <div class="formula">Тиімділік → оқушы нәтижесі арқылы анықталады</div>
+          <div class="formula">Технология → сабақ жағдайына бейімделеді</div>
+          <div class="formula">Оқушы деңгейі → қолдау мөлшерін анықтайды</div>
+          <div class="formula">Ресурс → құрал + реактив + уақыт + цифрлық материал</div>
+          <div class="formula">Жіктеу → мақсат, әрекет, мазмұн, нәтиже бойынша</div>
+          <div class="formula">Бір сабақ → бірнеше технология элементін біріктіруі мүмкін</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="terms">
+        <div class="term-list">
+          <div class="term"><b>Технологияны жіктеу</b><p>Оқыту технологияларын мақсаты, мазмұны, әрекеті және нәтижесі бойынша топтастыру.</p></div>
+          <div class="term"><b>Технологияны таңдау</b><p>Сабақ мақсаты мен оқу жағдайына сәйкес тиімді технологияны анықтау.</p></div>
+          <div class="term"><b>Бейімдеу</b><p>Технологияны пән мазмұнына, оқушы деңгейіне және сабақ жағдайына сәйкестендіру.</p></div>
+          <div class="term"><b>Оқу жағдайы</b><p>Сабақтың мақсаты, уақыты, ресурсы, оқушы деңгейі және мазмұн ерекшелігі.</p></div>
+          <div class="term"><b>Тиімділік</b><p>Технологияның күтілетін оқу нәтижесіне жеткізу деңгейі.</p></div>
+          <div class="term"><b>Қолдау</b><p>Оқушының оқу мақсатына жетуіне көмектесетін мұғалім әрекеті.</p></div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="test">
+        <div id="block2Result" class="result"></div>
+
+        <div class="question" data-answer="2">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>1. Химия сабағында оқыту технологиясын таңдаудың негізгі шарты:</p>
+          <label class="option"><input type="radio" name="q2b1" value="0"> Технологияның педагогикада жиі қолданылатын атауға ие болуы</label>
+          <label class="option"><input type="radio" name="q2b1" value="1"> Мұғалімге түсіндіруді жеңілдететін дайын құрылым ұсынуы</label>
+          <label class="option"><input type="radio" name="q2b1" value="2"> Оқу мақсатына, тақырып мазмұнына және оқушы деңгейіне сәйкес келуі</label>
+          <label class="option"><input type="radio" name="q2b1" value="3"> Сабақтағы теориялық материал көлемін қысқартуға мүмкіндік беруі</label>
+          <label class="option"><input type="radio" name="q2b1" value="4"> Оқулықтағы тапсырмаларды бірізді орындауға жағдай жасауы</label>
+          <div class="explain">Дұрыс жауап: C. Технология оқу мақсаты, мазмұн, оқушы деңгейі және сабақ жағдайына сай таңдалады.</div>
+        </div>
+
+        <div class="question" data-answer="0,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>2. Химияны оқыту технологиясын таңдауда ескерілетін факторларды таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q2b2" value="0"> Оқу мақсаты және күтілетін нәтиже</label>
+          <label class="option"><input type="checkbox" name="q2b2" value="1"> Оқулық тарауларының сыртқы безендірілуі</label>
+          <label class="option"><input type="checkbox" name="q2b2" value="2"> Пәндік терминдердің алфавиттік орналасуы</label>
+          <label class="option"><input type="checkbox" name="q2b2" value="3"> Оқушылардың дайындық деңгейі</label>
+          <label class="option"><input type="checkbox" name="q2b2" value="4"> Теориялық мәтіннің параграфтағы көлемі</label>
+          <label class="option"><input type="checkbox" name="q2b2" value="5"> Эксперимент, ресурс және уақыт мүмкіндігі</label>
+          <div class="explain">Дұрыс жауаптар: A, D, F. Технологияны таңдауда мақсат, оқушы деңгейі, ресурс, уақыт және эксперимент мүмкіндігі ескеріледі.</div>
+        </div>
+
+        <div class="question" data-answer="1">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>3. “Бір технология барлық сабаққа бірдей тиімді” деген пікірге әдістемелік баға:</p>
+          <label class="option"><input type="radio" name="q2b3" value="0"> Дұрыс, себебі технология оқыту үдерісін толық стандарттайды</label>
+          <label class="option"><input type="radio" name="q2b3" value="1"> Дұрыс емес, себебі технология сабақ мақсаты мен оқу жағдайына қарай таңдалады</label>
+          <label class="option"><input type="radio" name="q2b3" value="2"> Дұрыс, себебі химия пәнінде барлық тақырыптар бірдей құрылыммен оқытылады</label>
+          <label class="option"><input type="radio" name="q2b3" value="3"> Дұрыс емес, себебі технология тек бағалау кезеңінде қолданылады</label>
+          <label class="option"><input type="radio" name="q2b3" value="4"> Дұрыс, себебі оқушылардың дайындық деңгейі технологияға әсер етпейді</label>
+          <div class="explain">Дұрыс жауап: B. Технология сабақ мақсатына, мазмұнға, ресурсқа және оқушы деңгейіне қарай таңдалады.</div>
+        </div>
+
+        <div class="question" data-answer="1,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>4. Технологияның химия мазмұнына бейімделуін көрсететін әрекеттерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q2b4" value="0"> Сабақтың барлық кезеңін дайын мәтін оқуға негіздеу</label>
+          <label class="option"><input type="checkbox" name="q2b4" value="1"> Экспериментті оқу мақсатына сәйкес жоспарлау</label>
+          <label class="option"><input type="checkbox" name="q2b4" value="2"> Реакция теңдеуі мен химиялық тілді тапсырмаға енгізу</label>
+          <label class="option"><input type="checkbox" name="q2b4" value="3"> Оқушы әрекетін теорияны жаттаумен шектеу</label>
+          <label class="option"><input type="checkbox" name="q2b4" value="4"> Есеп шығару мен тәжірибе нәтижесін талдауды байланыстыру</label>
+          <label class="option"><input type="checkbox" name="q2b4" value="5"> Тақырып мазмұнын тек анықтамалық түрде беру</label>
+          <div class="explain">Дұрыс жауаптар: B, C, E. Химияда технология эксперимент, теңдеу, есеп және химиялық талдаумен байланысуы керек.</div>
+        </div>
+
+        <div class="question" data-answer="4">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>5. Технология тиімділігін анықтайтын басты көрсеткіш:</p>
+          <label class="option"><input type="radio" name="q2b5" value="0"> Сабақта қолданылған әдістің күрделі атауы</label>
+          <label class="option"><input type="radio" name="q2b5" value="1"> Мұғалім түсіндірген теориялық ақпарат көлемі</label>
+          <label class="option"><input type="radio" name="q2b5" value="2"> Оқулықтағы тапсырмалардың толық орындалуы</label>
+          <label class="option"><input type="radio" name="q2b5" value="3"> Сабақ құрылымының дәстүрлі кезеңдермен сәйкес келуі</label>
+          <label class="option"><input type="radio" name="q2b5" value="4"> Оқушының оқу мақсатына сәйкес нәтижеге жетуі</label>
+          <div class="explain">Дұрыс жауап: E. Технология тиімділігі оқушының нақты оқу нәтижесі арқылы анықталады.</div>
+        </div>
+
+        <button class="check-btn" onclick="checkBlock('block2')">Тестті тексеру</button>
+      </div>
+    </section>
+
+    <section id="block3" class="study-block">
+      <div class="study-block-header">
+        <div class="block-number">3</div>
+        <div>
+          <h2>Бағдарламалап оқыту және дербес оқыту технологиялары</h2>
+          <p>
+            Оқу материалын кезеңдеп меңгеру, кері байланыс, өзіндік жұмыс,
+            жеке қарқын, оқушы дербестігі және химиядағы қолдану мүмкіндіктері.
+          </p>
+        </div>
+      </div>
+
+      <div class="mini-tabs">
+        <button class="active" onclick="openTab(event, 'block3', 'theory')">Теория</button>
+        <button onclick="openTab(event, 'block3', 'formula')">Тірек</button>
+        <button onclick="openTab(event, 'block3', 'terms')">Термин</button>
+        <button onclick="openTab(event, 'block3', 'test')">Тест</button>
+      </div>
+
+      <div class="tab-content active" data-tab="theory">
+        <details open>
+          <summary>Бағдарламалап оқыту мәні</summary>
+          <p>
+            Бағдарламалап оқыту оқу материалын шағын, логикалық реттелген бөліктерге
+            бөліп меңгертеді. Әр қадамнан кейін оқушы жауап береді, өзінің нәтижесін
+            тексереді және келесі қадамға өтеді. Бұл технологияда кері байланыс пен
+            біртіндеп ілгерілеу маңызды.
+          </p>
+          <div class="source-small">
+            Дереккөз: Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”, 2016.
+          </div>
+        </details>
+
+        <details>
+          <summary>Кері байланыс және өзіндік бақылау</summary>
+          <p>
+            Бағдарламалап оқытуда оқушы әр кезеңде өз жауабын тексеріп, қатесін
+            түзетуге мүмкіндік алады. Бұл оқушының өзіндік бақылауын, жауапкершілігін
+            және оқу материалын біртіндеп меңгеруін күшейтеді.
+          </p>
+        </details>
+
+        <details>
+          <summary>Дербес оқыту технологиясы</summary>
+          <p>
+            Дербес оқыту оқушының жеке қарқынын, дайындық деңгейін және оқу
+            қажеттілігін ескеруге бағытталады. Мұнда тапсырмалар деңгейленуі,
+            оқушының таңдау мүмкіндігі және өзіндік жұмыс үлесі артуы мүмкін.
+          </p>
+        </details>
+
+        <details>
+          <summary>Химияда қолдану</summary>
+          <p>
+            Химияда бағдарламалап және дербес оқыту формула жазу, реакция теңдеуін
+            теңестіру, есеп шығару алгоритмін меңгеру, тест тапсырмаларын орындау,
+            зертханалық жұмысқа дайындалу кезінде тиімді қолданылады.
+          </p>
+        </details>
+
+        <details>
+          <summary>Артықшылықтары мен шектеулері</summary>
+          <p>
+            Бұл технологиялардың артықшылығы — оқушының жеке қарқынмен жұмыс істеуі,
+            қатені бірден түзетуі және материалды кезеңдеп меңгеруі. Шектеуі —
+            шығармашылық талқылау мен еркін зерттеу азайып кетуі мүмкін, сондықтан
+            оны басқа технологиялармен ұштастыру қажет.
+          </p>
+        </details>
+      </div>
+
+      <div class="tab-content" data-tab="formula">
+        <div class="formula-list">
+          <div class="formula">Бағдарламалап оқыту → шағын қадам + жауап + кері байланыс</div>
+          <div class="formula">Дербес оқыту → жеке қарқын + деңгейлік тапсырма</div>
+          <div class="formula">Кері байланыс → қате түзету + келесі қадам</div>
+          <div class="formula">Өзіндік бақылау → оқушы өз нәтижесін тексереді</div>
+          <div class="formula">Химияда қолдану → теңдеу + есеп + алгоритм</div>
+          <div class="formula">Деңгейлік тапсырма → дайындық деңгейіне сай жұмыс</div>
+          <div class="formula">Артықшылық → жүйелілік + жеке қарқын</div>
+          <div class="formula">Шектеу → талқылау мен шығармашылық азаюы мүмкін</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="terms">
+        <div class="term-list">
+          <div class="term"><b>Бағдарламалап оқыту</b><p>Оқу материалын кезең-кезеңмен меңгертіп, әр қадамда кері байланыс беретін технология.</p></div>
+          <div class="term"><b>Дербес оқыту</b><p>Оқушының жеке қарқыны мен дайындық деңгейін ескеретін оқыту технологиясы.</p></div>
+          <div class="term"><b>Жеке қарқын</b><p>Оқушының оқу материалын өз мүмкіндігіне сай меңгеру жылдамдығы.</p></div>
+          <div class="term"><b>Өзіндік бақылау</b><p>Оқушының өз жауабын, қатесін және нәтижесін тексеруі.</p></div>
+          <div class="term"><b>Деңгейлік тапсырма</b><p>Оқушының дайындық деңгейіне сәйкес күрделеніп берілетін тапсырма.</p></div>
+          <div class="term"><b>Алгоритм</b><p>Есеп шығару немесе теңдеу құрастыру сияқты әрекеттерді орындау реті.</p></div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="test">
+        <div id="block3Result" class="result"></div>
+
+        <div class="question" data-answer="2">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>1. Бағдарламалап оқытудың негізгі ерекшелігі:</p>
+          <label class="option"><input type="radio" name="q3b1" value="0"> Оқу материалын толық лекция түрінде жүйелі баяндау</label>
+          <label class="option"><input type="radio" name="q3b1" value="1"> Оқушының дайын жауапты есте сақтауына басымдық беру</label>
+          <label class="option"><input type="radio" name="q3b1" value="2"> Материалды шағын қадамдарға бөліп, әр кезеңде кері байланыс беру</label>
+          <label class="option"><input type="radio" name="q3b1" value="3"> Топтық талқылауды сабақтың негізгі формасы ретінде қолдану</label>
+          <label class="option"><input type="radio" name="q3b1" value="4"> Оқу мазмұнын жобалық жұмыс арқылы толық меңгерту</label>
+          <div class="explain">Дұрыс жауап: C. Бағдарламалап оқытуда материал шағын қадамдарға бөлініп, әр қадамда жауап пен кері байланыс беріледі.</div>
+        </div>
+
+        <div class="question" data-answer="0,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>2. Дербес оқыту технологиясына тән белгілерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q3b2" value="0"> Оқушының жеке қарқынын ескеру</label>
+          <label class="option"><input type="checkbox" name="q3b2" value="1"> Барлық оқушыға бірдей тапсырма мен бірдей қарқын ұсыну</label>
+          <label class="option"><input type="checkbox" name="q3b2" value="2"> Мұғалімнің түсіндіруін сабақтағы жалғыз әрекетке айналдыру</label>
+          <label class="option"><input type="checkbox" name="q3b2" value="3"> Деңгейлік немесе сараланған тапсырма қолдану</label>
+          <label class="option"><input type="checkbox" name="q3b2" value="4"> Оқушының өзіндік таңдауын шектеу</label>
+          <label class="option"><input type="checkbox" name="q3b2" value="5"> Өзіндік жұмыс пен өзіндік бақылауды күшейту</label>
+          <div class="explain">Дұрыс жауаптар: A, D, F. Дербес оқыту жеке қарқын, деңгейлік тапсырма және өзіндік бақылауға негізделеді.</div>
+        </div>
+
+        <div class="question" data-answer="1">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>3. Химияда бағдарламалап оқыту қай жағдайда тиімді?</p>
+          <label class="option"><input type="radio" name="q3b3" value="0"> Оқушылар химиялық құбылыстар бойынша еркін жоба қорғағанда</label>
+          <label class="option"><input type="radio" name="q3b3" value="1"> Реакция теңдеуін теңестіру алгоритмін кезеңдеп меңгергенде</label>
+          <label class="option"><input type="radio" name="q3b3" value="2"> Тәжірибе нәтижесін топтық пікірталаста талқылағанда</label>
+          <label class="option"><input type="radio" name="q3b3" value="3"> Заттардың қасиетін проблемалық сұрақ арқылы ашқанда</label>
+          <label class="option"><input type="radio" name="q3b3" value="4"> Химиялық өндіріс бойынша шығармашылық жоба жасағанда</label>
+          <div class="explain">Дұрыс жауап: B. Бағдарламалап оқыту алгоритмдік әрекеттерді, мысалы теңдеу теңестіруді кезеңдеп меңгертуге тиімді.</div>
+        </div>
+
+        <div class="question" data-answer="1,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>4. Бағдарламалап және дербес оқытудың артықшылықтарын таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q3b4" value="0"> Оқушының оқу қарқынын толық біріздендіру</label>
+          <label class="option"><input type="checkbox" name="q3b4" value="1"> Қатені кезең сайын түзету мүмкіндігі</label>
+          <label class="option"><input type="checkbox" name="q3b4" value="2"> Материалды жүйелі және біртіндеп меңгерту</label>
+          <label class="option"><input type="checkbox" name="q3b4" value="3"> Оқушының оқу әрекетін тек тыңдаумен шектеу</label>
+          <label class="option"><input type="checkbox" name="q3b4" value="4"> Оқушының өзіндік бақылауын дамыту</label>
+          <label class="option"><input type="checkbox" name="q3b4" value="5"> Тапсырманың мазмұнын оқу мақсатынан бөлу</label>
+          <div class="explain">Дұрыс жауаптар: B, C, E. Бұл технологиялар жүйелілік, кері байланыс және өзіндік бақылауды күшейтеді.</div>
+        </div>
+
+        <div class="question" data-answer="4">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>5. Бағдарламалап оқытуды қолданғанда ескерілетін шектеу:</p>
+          <label class="option"><input type="radio" name="q3b5" value="0"> Оқушының қатесін түзетуге мүмкіндік бермейді</label>
+          <label class="option"><input type="radio" name="q3b5" value="1"> Есеп шығару алгоритмін меңгертуге мүлде жарамсыз</label>
+          <label class="option"><input type="radio" name="q3b5" value="2"> Жеке қарқынмен жұмыс істеуге мүмкіндік бермейді</label>
+          <label class="option"><input type="radio" name="q3b5" value="3"> Оқу материалын кезеңдеп меңгертуге қарсы келеді</label>
+          <label class="option"><input type="radio" name="q3b5" value="4"> Еркін зерттеу мен шығармашылық талқылау мүмкіндігін азайтуы мүмкін</label>
+          <div class="explain">Дұрыс жауап: E. Бағдарламалап оқыту тым алгоритмдік болып кетсе, шығармашылық және еркін зерттеу азаюы мүмкін.</div>
+        </div>
+
+        <button class="check-btn" onclick="checkBlock('block3')">Тестті тексеру</button>
+      </div>
+    </section>
+        <section id="block4" class="study-block">
+      <div class="study-block-header">
+        <div class="block-number">4</div>
+        <div>
+          <h2>Модульдік, жобалық және проблемалық оқыту технологиялары</h2>
+          <p>
+            Модульдік құрылым, жобалық жұмыс, проблемалық жағдаят, зерттеушілік әрекет,
+            химиялық мәселені шешу және оқушының танымдық белсенділігін дамыту.
+          </p>
+        </div>
+      </div>
+
+      <div class="mini-tabs">
+        <button class="active" onclick="openTab(event, 'block4', 'theory')">Теория</button>
+        <button onclick="openTab(event, 'block4', 'formula')">Тірек</button>
+        <button onclick="openTab(event, 'block4', 'terms')">Термин</button>
+        <button onclick="openTab(event, 'block4', 'test')">Тест</button>
+      </div>
+
+      <div class="tab-content active" data-tab="theory">
+        <details open>
+          <summary>Модульдік оқыту технологиясы</summary>
+          <p>
+            Модульдік оқытуда оқу материалы мағыналық жағынан аяқталған блоктарға
+            бөлінеді. Әр модульде мақсат, теориялық мазмұн, тапсырмалар, өзіндік жұмыс,
+            бақылау және қорытындылау болады. Химияда модульдік оқыту бір бөлімді
+            жүйелі қайталау, ұғымдарды байланыстыру және оқушының өзіндік жұмысын
+            ұйымдастыру үшін тиімді.
+          </p>
+          <div class="source-small">
+            Дереккөз: Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”, 2016.
+          </div>
+        </details>
+
+        <details>
+          <summary>Жобалық оқыту технологиясы</summary>
+          <p>
+            Жобалық оқыту оқушыны нақты мәселені зерттеп, өнім немесе қорытынды
+            жасауға бағыттайды. Химияда жоба экология, тұрмыстық химия, су сапасы,
+            тағам құрамы, тыңайтқыштар, өндірістік үдерістер сияқты өмірмен байланысты
+            тақырыптарға негізделуі мүмкін.
+          </p>
+        </details>
+
+        <details>
+          <summary>Проблемалық оқыту технологиясы</summary>
+          <p>
+            Проблемалық оқытуда мұғалім оқушыны дайын жауапқа емес, мәселені шешуге
+            бағыттайды. Сабақта проблемалық сұрақ, қарама-қайшылық, тәжірибе нәтижесін
+            түсіндіру немесе реакция жүру себебін анықтау арқылы оқушының ойлауы
+            белсендіріледі.
+          </p>
+        </details>
+
+        <details>
+          <summary>Химиядағы проблемалық жағдаят</summary>
+          <p>
+            Проблемалық жағдаят оқушыда “неге?”, “қалай?”, “қандай дәлел бар?”
+            деген сұрақ тудырады. Мысалы, бір металл қышқылмен әрекеттеседі, ал
+            екіншісі әрекеттеспейді; индикатор түсінің өзгеруі; тұнбаның түзілуі;
+            реакция жылдамдығының жағдайға тәуелділігі сияқты құбылыстар талданады.
+          </p>
+        </details>
+
+        <details>
+          <summary>Технологияларды біріктіріп қолдану</summary>
+          <p>
+            Бір химия сабағында бірнеше технология элементі бірге қолданылуы мүмкін:
+            модульдік құрылым арқылы бөлім жүйеленеді, проблемалық сұрақ арқылы
+            қызығушылық оянады, жоба арқылы білім өмірмен байланысады. Маңыздысы —
+            технология сабақ мақсатына қызмет етуі керек.
+          </p>
+        </details>
+      </div>
+
+      <div class="tab-content" data-tab="formula">
+        <div class="formula-list">
+          <div class="formula">Модульдік оқыту → мақсат + мазмұн + тапсырма + бақылау</div>
+          <div class="formula">Жобалық оқыту → мәселе + зерттеу + өнім + қорғау</div>
+          <div class="formula">Проблемалық оқыту → сұрақ + қайшылық + ізденіс + шешім</div>
+          <div class="formula">Химиялық проблема → құбылыс + себеп + дәлел</div>
+          <div class="formula">Жоба тақырыбы → өмірмен байланыс + химиялық түсіндіру</div>
+          <div class="formula">Модуль → аяқталған оқу блогы</div>
+          <div class="formula">Проблемалық жағдаят → оқушы ойлауын белсендіру</div>
+          <div class="formula">Технологияны біріктіру → мақсатқа қызмет етуі керек</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="terms">
+        <div class="term-list">
+          <div class="term"><b>Модульдік оқыту</b><p>Оқу материалын аяқталған блоктар арқылы меңгертетін технология.</p></div>
+          <div class="term"><b>Модуль</b><p>Мақсаты, мазмұны, тапсырмасы және бақылауы бар оқу блогы.</p></div>
+          <div class="term"><b>Жобалық оқыту</b><p>Оқушының нақты мәселені зерттеп, өнім немесе қорытынды ұсынуына негізделген технология.</p></div>
+          <div class="term"><b>Проблемалық оқыту</b><p>Оқушыны мәселе шешуге және дәлелді ойлауға бағыттайтын оқыту технологиясы.</p></div>
+          <div class="term"><b>Проблемалық жағдаят</b><p>Оқушыны түсіндіру, дәлелдеу және шешім іздеуге итермелейтін оқу жағдайы.</p></div>
+          <div class="term"><b>Жоба өнімі</b><p>Зерттеу нәтижесі ретінде ұсынылатын баяндама, модель, кесте, тәжірибе қорытындысы немесе ұсыныс.</p></div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="test">
+        <div id="block4Result" class="result"></div>
+
+        <div class="question" data-answer="2">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>1. Модульдік оқыту технологиясының негізгі белгісі:</p>
+          <label class="option"><input type="radio" name="q4b1" value="0"> Сабақ мазмұнын мұғалім түсіндірген ретпен толық баяндау</label>
+          <label class="option"><input type="radio" name="q4b1" value="1"> Оқушылардың барлық тапсырманы бірдей қарқынмен орындауы</label>
+          <label class="option"><input type="radio" name="q4b1" value="2"> Оқу материалын мақсат, тапсырма және бақылауы бар аяқталған блоктарға бөлу</label>
+          <label class="option"><input type="radio" name="q4b1" value="3"> Оқу нәтижесін тек қорытынды тест арқылы анықтау</label>
+          <label class="option"><input type="radio" name="q4b1" value="4"> Теориялық ұғымдарды анықтама ретінде жаттауға бағыттау</label>
+          <div class="explain">Дұрыс жауап: C. Модульдік оқытуда оқу материалы мақсат, мазмұн, тапсырма және бақылауы бар блоктарға бөлінеді.</div>
+        </div>
+
+        <div class="question" data-answer="0,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>2. Жобалық оқыту технологиясына сәйкес әрекеттерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q4b2" value="0"> Нақты химиялық немесе экологиялық мәселені зерттеу</label>
+          <label class="option"><input type="checkbox" name="q4b2" value="1"> Теориялық мәтінді дайын жоспар бойынша қайталау</label>
+          <label class="option"><input type="checkbox" name="q4b2" value="2"> Барлық оқушының бір ғана жауап үлгісін көшіруі</label>
+          <label class="option"><input type="checkbox" name="q4b2" value="3"> Зерттеу нәтижесін өнім немесе қорытынды түрінде ұсыну</label>
+          <label class="option"><input type="checkbox" name="q4b2" value="4"> Сабақ мазмұнын тек мұғалім түсіндіруіне негіздеу</label>
+          <label class="option"><input type="checkbox" name="q4b2" value="5"> Өмірмен байланысты химиялық деректерді талдау</label>
+          <div class="explain">Дұрыс жауаптар: A, D, F. Жобалық оқыту мәселені зерттеуге, нәтиже ұсынуға және өмірмен байланысты талдауға негізделеді.</div>
+        </div>
+
+        <div class="question" data-answer="1">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>3. Проблемалық оқытудың негізгі мақсаты:</p>
+          <label class="option"><input type="radio" name="q4b3" value="0"> Оқушының дайын ақпаратты есте сақтауын күшейту</label>
+          <label class="option"><input type="radio" name="q4b3" value="1"> Оқушыны мәселені түсіндіруге, дәлелдеуге және шешім іздеуге бағыттау</label>
+          <label class="option"><input type="radio" name="q4b3" value="2"> Сабақтағы тапсырмаларды бірдей алгоритм бойынша орындау</label>
+          <label class="option"><input type="radio" name="q4b3" value="3"> Оқу материалын қысқа анықтамалар түрінде беру</label>
+          <label class="option"><input type="radio" name="q4b3" value="4"> Химиялық терминдерді ретімен жаттату</label>
+          <div class="explain">Дұрыс жауап: B. Проблемалық оқыту оқушыны дайын жауапқа емес, мәселені шешуге және дәлелдеуге бағыттайды.</div>
+        </div>
+
+        <div class="question" data-answer="1,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>4. Химия сабағындағы проблемалық жағдаятқа сәйкес мысалдарды таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q4b4" value="0"> Оқулықтағы анықтаманы дәптерге көшіру</label>
+          <label class="option"><input type="checkbox" name="q4b4" value="1"> Бір металдың қышқылмен әрекеттесіп, екіншісінің әрекеттеспеуін түсіндіру</label>
+          <label class="option"><input type="checkbox" name="q4b4" value="2"> Индикатор түсінің өзгеру себебін химиялық тұрғыдан дәлелдеу</label>
+          <label class="option"><input type="checkbox" name="q4b4" value="3"> Дайын реакция теңдеуін тек көшіріп жазу</label>
+          <label class="option"><input type="checkbox" name="q4b4" value="4"> Тұнба түзілуінің ион алмасу реакциясымен байланысын анықтау</label>
+          <label class="option"><input type="checkbox" name="q4b4" value="5"> Параграф соңындағы сұрақтарды жауап үлгісімен салыстыру</label>
+          <div class="explain">Дұрыс жауаптар: B, C, E. Проблемалық жағдаят оқушыны құбылыстың себебін түсіндіруге және дәлелдеуге бағыттайды.</div>
+        </div>
+
+        <div class="question" data-answer="4">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>5. Бір сабақта бірнеше технология элементін біріктірудің негізгі шарты:</p>
+          <label class="option"><input type="radio" name="q4b5" value="0"> Әр технология атауы сабақ жоспарында бөлек жазылуы</label>
+          <label class="option"><input type="radio" name="q4b5" value="1"> Сабақта қолданылған технология санының көп болуы</label>
+          <label class="option"><input type="radio" name="q4b5" value="2"> Мұғалімнің барлық кезеңде негізгі түсіндіруші болуы</label>
+          <label class="option"><input type="radio" name="q4b5" value="3"> Оқушы әрекетінің дайын үлгі бойынша шектелуі</label>
+          <label class="option"><input type="radio" name="q4b5" value="4"> Барлық технология элементінің сабақ мақсатына қызмет етуі</label>
+          <div class="explain">Дұрыс жауап: E. Технология элементтері көп болуы үшін емес, оқу мақсатына жету үшін біріктіріледі.</div>
+        </div>
+
+        <button class="check-btn" onclick="checkBlock('block4')">Тестті тексеру</button>
+      </div>
+    </section>
+
+    <section id="block5" class="study-block">
+      <div class="study-block-header">
+        <div class="block-number">5</div>
+        <div>
+          <h2>АКТ, ойын технологиясы және химия сабағында қолдану</h2>
+          <p>
+            Ақпараттық-коммуникациялық технологиялар, цифрлық ресурстар, ойын арқылы
+            оқыту, модельдеу, виртуалды тәжірибе және химия сабақтарында тиімді қолдану.
+          </p>
+        </div>
+      </div>
+
+      <div class="mini-tabs">
+        <button class="active" onclick="openTab(event, 'block5', 'theory')">Теория</button>
+        <button onclick="openTab(event, 'block5', 'formula')">Тірек</button>
+        <button onclick="openTab(event, 'block5', 'terms')">Термин</button>
+        <button onclick="openTab(event, 'block5', 'test')">Тест</button>
+      </div>
+
+      <div class="tab-content active" data-tab="theory">
+        <details open>
+          <summary>АКТ-ның химияны оқытудағы орны</summary>
+          <p>
+            Ақпараттық-коммуникациялық технологиялар химия сабағында күрделі
+            құбылыстарды визуализациялау, молекула құрылысын модельдеу, реакция
+            үдерісін көрсету, тест өткізу, дерекпен жұмыс жасау және оқушының
+            танымдық қызығушылығын арттыру үшін қолданылады.
+          </p>
+          <div class="source-small">
+            Дереккөз: Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”, 2016.
+          </div>
+        </details>
+
+        <details>
+          <summary>Виртуалды тәжірибе және модельдеу</summary>
+          <p>
+            Виртуалды тәжірибе нақты зертханалық жұмысты толық алмастырмайды, бірақ
+            қауіпті, қымбат немесе күрделі тәжірибелерді түсіндіруде пайдалы. Модельдеу
+            атом, молекула, кристалдық тор, реакция механизмі сияқты көзге көрінбейтін
+            үдерістерді түсінуге көмектеседі.
+          </p>
+        </details>
+
+        <details>
+          <summary>Ойын технологиясы</summary>
+          <p>
+            Ойын технологиясы оқу әрекетін қызықты, белсенді және жарыс элементтерімен
+            ұйымдастыруға мүмкіндік береді. Химияда ойын элементтері терминдерді
+            қайталау, формула құрастыру, реакция теңдеуін сәйкестендіру, заттарды
+            жіктеу және қауіпсіздік ережелерін бекіту кезінде қолданылады.
+          </p>
+        </details>
+
+        <details>
+          <summary>АКТ мен ойынның шектеулері</summary>
+          <p>
+            АКТ мен ойын технологиялары сабақ мақсатына бағынуы керек. Егер цифрлық
+            ресурс немесе ойын тек қызықтыру үшін қолданылып, химиялық мазмұнды
+            меңгеруге қызмет етпесе, оның тиімділігі төмендейді. Сондықтан әр құрал
+            нақты оқу нәтижесімен байланысуы қажет.
+          </p>
+        </details>
+
+        <details>
+          <summary>Химия сабағында тиімді қолдану</summary>
+          <p>
+            АКТ, ойын, модельдеу және виртуалды зертхана сабақта оқушының түсінуін
+            жеңілдету, қызығушылығын арттыру, дербес жұмысын ұйымдастыру және
+            күрделі химиялық құбылыстарды көрнекі түсіндіру үшін қолданылады.
+          </p>
+        </details>
+      </div>
+
+      <div class="tab-content" data-tab="formula">
+        <div class="formula-list">
+          <div class="formula">АКТ → визуализация + модельдеу + дерек + тест</div>
+          <div class="formula">Виртуалды тәжірибе → қауіпсіз түсіндіру + көрнекілік</div>
+          <div class="formula">Модельдеу → атом + молекула + реакция механизмі</div>
+          <div class="formula">Ойын технологиясы → қызығушылық + белсенділік + бекіту</div>
+          <div class="formula">Химияда ойын → термин + формула + теңдеу + жіктеу</div>
+          <div class="formula">АКТ тиімділігі → оқу мақсатына байланысу</div>
+          <div class="formula">Цифрлық ресурс → мазмұнды түсіндіруге қызмет етуі керек</div>
+          <div class="formula">Құрал таңдау → мақсат + мазмұн + нәтиже</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="terms">
+        <div class="term-list">
+          <div class="term"><b>АКТ</b><p>Оқу үдерісінде ақпараттық және цифрлық құралдарды қолдану технологиясы.</p></div>
+          <div class="term"><b>Виртуалды тәжірибе</b><p>Химиялық тәжірибені цифрлық ортада модельдеп көрсету.</p></div>
+          <div class="term"><b>Модельдеу</b><p>Көзге көрінбейтін химиялық құрылым немесе үдерісті көрнекі бейнелеу.</p></div>
+          <div class="term"><b>Ойын технологиясы</b><p>Оқу әрекетін ойын элементтері арқылы ұйымдастыру технологиясы.</p></div>
+          <div class="term"><b>Цифрлық ресурс</b><p>Сабақта қолданылатын электронды модель, симуляция, тест, бейне немесе интерактивті материал.</p></div>
+          <div class="term"><b>Визуализация</b><p>Күрделі ұғымды сурет, модель, анимация немесе сызба арқылы түсіндіру.</p></div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="test">
+        <div id="block5Result" class="result"></div>
+
+        <div class="question" data-answer="2">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>1. АКТ-ны химия сабағында қолданудың негізгі әдістемелік мақсаты:</p>
+          <label class="option"><input type="radio" name="q5b1" value="0"> Сабақтағы барлық түсіндіруді цифрлық материалға толық ауыстыру</label>
+          <label class="option"><input type="radio" name="q5b1" value="1"> Оқушының жазбаша жұмысын азайтып, сабақ уақытын қысқарту</label>
+          <label class="option"><input type="radio" name="q5b1" value="2"> Күрделі химиялық құбылыстарды көрнекі түсіндіру және оқу әрекетін қолдау</label>
+          <label class="option"><input type="radio" name="q5b1" value="3"> Теориялық мәтінді оқулықсыз толық есте сақтатуға мүмкіндік беру</label>
+          <label class="option"><input type="radio" name="q5b1" value="4"> Бағалауды тек автоматты тест нәтижесімен шектеу</label>
+          <div class="explain">Дұрыс жауап: C. АКТ химиялық құбылыстарды көрнекі түсіндіру және оқушы әрекетін қолдау үшін қолданылады.</div>
+        </div>
+
+        <div class="question" data-answer="0,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>2. Химияда АКТ тиімді қолданылатын жағдайларды таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q5b2" value="0"> Молекула құрылысын модельдеу</label>
+          <label class="option"><input type="checkbox" name="q5b2" value="1"> Оқулықтағы мәтінді тек экраннан көшіру</label>
+          <label class="option"><input type="checkbox" name="q5b2" value="2"> Сабақ мақсатын цифрлық ресурссыз алмастыру</label>
+          <label class="option"><input type="checkbox" name="q5b2" value="3"> Қауіпті немесе күрделі тәжірибені виртуалды көрсету</label>
+          <label class="option"><input type="checkbox" name="q5b2" value="4"> Оқушы әрекетін дайын бейнені пассив көрумен шектеу</label>
+          <label class="option"><input type="checkbox" name="q5b2" value="5"> Реакция үдерісін анимация немесе симуляция арқылы түсіндіру</label>
+          <div class="explain">Дұрыс жауаптар: A, D, F. АКТ молекула құрылысын, қауіпті тәжірибені және реакция үдерісін көрнекі түсіндіруде тиімді.</div>
+        </div>
+
+        <div class="question" data-answer="1">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>3. Виртуалды тәжірибеге қатысты дұрыс әдістемелік тұжырым:</p>
+          <label class="option"><input type="radio" name="q5b3" value="0"> Ол нақты зертханалық жұмысты барлық жағдайда толық алмастырады</label>
+          <label class="option"><input type="radio" name="q5b3" value="1"> Ол қауіпті немесе күрделі тәжірибені түсіндіруге көмектеседі, бірақ нақты тәжірибені толық ығыстырмайды</label>
+          <label class="option"><input type="radio" name="q5b3" value="2"> Ол химиялық мазмұннан бөлек қолданылғанда тиімді болады</label>
+          <label class="option"><input type="radio" name="q5b3" value="3"> Ол тек теориялық анықтамаларды жаттатуға арналған</label>
+          <label class="option"><input type="radio" name="q5b3" value="4"> Ол оқушының бақылау және талдау әрекетін қажет етпейді</label>
+          <div class="explain">Дұрыс жауап: B. Виртуалды тәжірибе нақты тәжірибені толық алмастырмайды, бірақ күрделі немесе қауіпті үдерістерді түсіндіруге көмектеседі.</div>
+        </div>
+
+        <div class="question" data-answer="1,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>4. Ойын технологиясын химия сабағында орынды қолдануға сәйкес әрекеттерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q5b4" value="0"> Ойынды химиялық мазмұннан бөлек көңіл көтеру құралы ретінде өткізу</label>
+          <label class="option"><input type="checkbox" name="q5b4" value="1"> Формула құрастыру мен заттарды жіктеуді ойын тапсырмасы арқылы бекіту</label>
+          <label class="option"><input type="checkbox" name="q5b4" value="2"> Реакция теңдеуін сәйкестендіру арқылы оқушы белсенділігін арттыру</label>
+          <label class="option"><input type="checkbox" name="q5b4" value="3"> Ойын нәтижесін оқу мақсатымен байланыстырмау</label>
+          <label class="option"><input type="checkbox" name="q5b4" value="4"> Қауіпсіздік ережелерін жағдаяттық ойын арқылы қайталау</label>
+          <label class="option"><input type="checkbox" name="q5b4" value="5"> Ойын кезінде химиялық ұғымдарды қолдануды шектеу</label>
+          <div class="explain">Дұрыс жауаптар: B, C, E. Ойын технологиясы химиялық мазмұнды бекітуге, белсенділікті арттыруға және оқу мақсатына қызмет етуге тиіс.</div>
+        </div>
+
+        <div class="question" data-answer="4">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>5. АКТ немесе ойын технологиясының тиімділігін төмендететін жағдай:</p>
+          <label class="option"><input type="radio" name="q5b5" value="0"> Цифрлық модельдің химиялық ұғымды түсіндіруге көмектесуі</label>
+          <label class="option"><input type="radio" name="q5b5" value="1"> Ойын тапсырмасының реакция теңдеуін бекітуге бағытталуы</label>
+          <label class="option"><input type="radio" name="q5b5" value="2"> Виртуалды тәжірибенің қауіпсіздікпен байланыстырылуы</label>
+          <label class="option"><input type="radio" name="q5b5" value="3"> Симуляция арқылы көзге көрінбейтін үдерісті түсіндіру</label>
+          <label class="option"><input type="radio" name="q5b5" value="4"> Құралдың сабақ мақсаты мен химиялық мазмұннан бөлек қолданылуы</label>
+          <div class="explain">Дұрыс жауап: E. АКТ немесе ойын сабақ мақсаты мен химиялық мазмұнға қызмет етпесе, тиімділігі төмендейді.</div>
+        </div>
+
+        <button class="check-btn" onclick="checkBlock('block5')">Тестті тексеру</button>
+      </div>
+    </section>
+        <section id="block6" class="study-block">
+      <div class="study-block-header">
+        <div class="block-number">6</div>
+        <div>
+          <h2>Жинақ тест</h2>
+          <p>
+            Қазіргі технологиялар, технологияны таңдау, бағдарламалап оқыту,
+            дербес оқыту, модульдік, жобалық, проблемалық оқыту, АКТ және ойын
+            технологиялары бойынша қорытынды тексеру.
+          </p>
+        </div>
+      </div>
+
+      <div class="mini-tabs">
+        <button class="active" onclick="openTab(event, 'block6', 'theory')">Нұсқаулық</button>
+        <button onclick="openTab(event, 'block6', 'formula')">Қайталау</button>
+        <button onclick="openTab(event, 'block6', 'terms')">Термин</button>
+        <button onclick="openTab(event, 'block6', 'test')">Тест</button>
+      </div>
+
+      <div class="tab-content active" data-tab="theory">
+        <details open>
+          <summary>Қорытынды бөлім</summary>
+          <p>
+            Бұл бөлім Құрманәлиев М.Қ. еңбегі бойынша химияны оқытудың қазіргі
+            технологияларын қайталауға арналған. Сұрақтар технологияның мәнін,
+            химия сабағында қолдану шарттарын және оқу нәтижесімен байланысын
+            тексереді.
+          </p>
+          <div class="source-small">
+            Дереккөз: Құрманәлиев М.Қ. “Химияны оқытудың қазіргі технологиялары”, 2016.
+          </div>
+        </details>
+      </div>
+
+      <div class="tab-content" data-tab="formula">
+        <div class="formula-list">
+          <div class="formula">Педагогикалық технология → мақсат + мазмұн + әдіс + нәтиже</div>
+          <div class="formula">Технология таңдау → мақсат + оқушы деңгейі + ресурс</div>
+          <div class="formula">Бағдарламалап оқыту → шағын қадам + кері байланыс</div>
+          <div class="formula">Дербес оқыту → жеке қарқын + өзіндік бақылау</div>
+          <div class="formula">Модульдік оқыту → аяқталған оқу блогы</div>
+          <div class="formula">Жобалық оқыту → мәселе + зерттеу + өнім</div>
+          <div class="formula">Проблемалық оқыту → сұрақ + ізденіс + шешім</div>
+          <div class="formula">АКТ → визуализация + модельдеу + симуляция</div>
+          <div class="formula">Ойын технологиясы → белсенділік + бекіту + қызығушылық</div>
+          <div class="formula">Тиімділік → оқу нәтижесіне жету</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="terms">
+        <div class="term-list">
+          <div class="term"><b>Педагогикалық технология</b><p>Оқыту мақсатына жетуді жүйелі жобалайтын педагогикалық әрекет жүйесі.</p></div>
+          <div class="term"><b>Бағдарламалап оқыту</b><p>Материалды кезеңдеп меңгертіп, әр қадамда кері байланыс беретін технология.</p></div>
+          <div class="term"><b>Дербес оқыту</b><p>Оқушының жеке қарқыны мен дайындық деңгейін ескеретін оқыту.</p></div>
+          <div class="term"><b>Модульдік оқыту</b><p>Оқу материалын аяқталған блоктар арқылы меңгертетін технология.</p></div>
+          <div class="term"><b>Проблемалық оқыту</b><p>Оқушыны мәселе шешуге және дәлелді ойлауға бағыттайтын технология.</p></div>
+          <div class="term"><b>АКТ</b><p>Оқу үдерісінде ақпараттық және цифрлық құралдарды қолдану.</p></div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab="test">
+        <div id="block6Result" class="result"></div>
+
+        <div class="question" data-answer="2">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>1. Қазіргі педагогикалық технологияны химияны оқытуда қолданудың негізгі мәні:</p>
+          <label class="option"><input type="radio" name="q6b1" value="0"> Сабақтағы теориялық материалды қысқаша мазмұндаумен шектеу</label>
+          <label class="option"><input type="radio" name="q6b1" value="1"> Химиялық ұғымдарды оқулықтағы ретімен жаттатуды ұйымдастыру</label>
+          <label class="option"><input type="radio" name="q6b1" value="2"> Оқыту үдерісін мақсаттан нәтижеге дейін жүйелі жобалау</label>
+          <label class="option"><input type="radio" name="q6b1" value="3"> Оқушы жұмысын тек дайын жауап үлгісімен салыстыру</label>
+          <label class="option"><input type="radio" name="q6b1" value="4"> Сабақта қолданылатын көрнекіліктер санын арттыру</label>
+          <div class="explain">Дұрыс жауап: C. Педагогикалық технология оқыту үдерісін мақсат, мазмұн, әрекет, бағалау және нәтиже байланысында жүйелі жобалайды.</div>
+        </div>
+
+        <div class="question" data-answer="0,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>2. Химия сабағында технологияны дұрыс таңдауға әсер ететін факторларды таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q6b2" value="0"> Оқу мақсаты және күтілетін нәтиже</label>
+          <label class="option"><input type="checkbox" name="q6b2" value="1"> Оқулық параграфтарының сыртқы орналасуы</label>
+          <label class="option"><input type="checkbox" name="q6b2" value="2"> Сабақ атауының қысқа немесе ұзын болуы</label>
+          <label class="option"><input type="checkbox" name="q6b2" value="3"> Оқушының дайындық деңгейі және оқу әрекеті</label>
+          <label class="option"><input type="checkbox" name="q6b2" value="4"> Пәндік терминдердің алфавиттік реті</label>
+          <label class="option"><input type="checkbox" name="q6b2" value="5"> Эксперимент, ресурс және уақыт мүмкіндігі</label>
+          <div class="explain">Дұрыс жауаптар: A, D, F. Технология оқу мақсаты, оқушы деңгейі, ресурс, уақыт және эксперимент мүмкіндігіне қарай таңдалады.</div>
+        </div>
+
+        <div class="question" data-answer="1">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>3. Бағдарламалап оқытуға сәйкес химиялық тапсырма:</p>
+          <label class="option"><input type="radio" name="q6b3" value="0"> Экологиялық мәселе бойынша ұзақ мерзімді жоба қорғау</label>
+          <label class="option"><input type="radio" name="q6b3" value="1"> Реакция теңдеуін теңестіруді кезең-кезеңмен меңгерту</label>
+          <label class="option"><input type="radio" name="q6b3" value="2"> Тәжірибе нәтижесі бойынша проблемалық пікірталас жүргізу</label>
+          <label class="option"><input type="radio" name="q6b3" value="3"> Химиялық өндіріс туралы шығармашылық постер дайындау</label>
+          <label class="option"><input type="radio" name="q6b3" value="4"> Зат қасиетін зерттеу арқылы ашық гипотеза құру</label>
+          <div class="explain">Дұрыс жауап: B. Бағдарламалап оқыту алгоритмдік әрекеттерді шағын қадамдар арқылы меңгертуге тиімді.</div>
+        </div>
+
+        <div class="question" data-answer="1,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>4. Жобалық және проблемалық оқытуға ортақ белгілерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q6b4" value="0"> Оқушыны дайын теориялық мәтінді қайталаумен шектеу</label>
+          <label class="option"><input type="checkbox" name="q6b4" value="1"> Химиялық мәселені талдау және шешім іздеу</label>
+          <label class="option"><input type="checkbox" name="q6b4" value="2"> Дәлелдеу, қорытынды жасау және нәтижені түсіндіру</label>
+          <label class="option"><input type="checkbox" name="q6b4" value="3"> Оқу әрекетін тек мұғалім түсіндіруіне бағындыру</label>
+          <label class="option"><input type="checkbox" name="q6b4" value="4"> Оқушының белсенді зерттеушілік әрекетін ұйымдастыру</label>
+          <label class="option"><input type="checkbox" name="q6b4" value="5"> Тапсырманы химиялық мазмұннан бөлек қарастыру</label>
+          <div class="explain">Дұрыс жауаптар: B, C, E. Бұл технологиялар оқушыны мәселе талдауға, дәлелдеуге, зерттеуге және қорытынды жасауға бағыттайды.</div>
+        </div>
+
+        <div class="question" data-answer="4">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>5. Модульдік оқыту технологиясына тән құрылым:</p>
+          <label class="option"><input type="radio" name="q6b5" value="0"> Мұғалімнің сабақ бойы дайын ақпаратты бірізді баяндауы</label>
+          <label class="option"><input type="radio" name="q6b5" value="1"> Тапсырмаларды оқушылардың бірдей қарқынмен орындауы</label>
+          <label class="option"><input type="radio" name="q6b5" value="2"> Оқу нәтижесін тек ауызша жауап арқылы анықтау</label>
+          <label class="option"><input type="radio" name="q6b5" value="3"> Химиялық терминдерді анықтамалық ретпен жаттау</label>
+          <label class="option"><input type="radio" name="q6b5" value="4"> Мақсаты, мазмұны, тапсырмасы және бақылауы бар аяқталған оқу блогы</label>
+          <div class="explain">Дұрыс жауап: E. Модульдік оқытуда оқу материалы аяқталған блоктар түрінде ұйымдастырылады.</div>
+        </div>
+
+        <div class="question" data-answer="0,2,4">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>6. Химия сабағында АКТ-ны тиімді қолдануға сәйкес әрекеттерді таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q6b6" value="0"> Молекула құрылымын цифрлық модель арқылы көрсету</label>
+          <label class="option"><input type="checkbox" name="q6b6" value="1"> Цифрлық ресурсты сабақ мақсатынан бөлек қолдану</label>
+          <label class="option"><input type="checkbox" name="q6b6" value="2"> Қауіпті тәжірибені виртуалды түрде түсіндіру</label>
+          <label class="option"><input type="checkbox" name="q6b6" value="3"> Оқушы әрекетін тек бейнені пассив көрумен шектеу</label>
+          <label class="option"><input type="checkbox" name="q6b6" value="4"> Реакция үдерісін анимация немесе симуляция арқылы талдау</label>
+          <label class="option"><input type="checkbox" name="q6b6" value="5"> Химиялық мазмұнды цифрлық әсермен алмастыру</label>
+          <div class="explain">Дұрыс жауаптар: A, C, E. АКТ молекула, реакция үдерісі және күрделі тәжірибелерді көрнекі түсіндіруде тиімді.</div>
+        </div>
+
+        <div class="question" data-answer="3">
+          <span class="question-note">Бір дұрыс жауап</span>
+          <p>7. Ойын технологиясын химия сабағында дұрыс қолдану шарты:</p>
+          <label class="option"><input type="radio" name="q6b7" value="0"> Ойын химиялық мазмұннан бөлек қызықтыру құралы ретінде қолданылуы</label>
+          <label class="option"><input type="radio" name="q6b7" value="1"> Ойын нәтижесінің бағалау және оқу мақсатымен байланыспауы</label>
+          <label class="option"><input type="radio" name="q6b7" value="2"> Оқушының химиялық ұғымдарды қолдану әрекетін шектеуі</label>
+          <label class="option"><input type="radio" name="q6b7" value="3"> Ойын тапсырмасының химиялық мазмұнды бекітуге және белсенділікке бағытталуы</label>
+          <label class="option"><input type="radio" name="q6b7" value="4"> Сабақтағы негізгі мақсатты тек жарыс нәтижесіне ауыстыруы</label>
+          <div class="explain">Дұрыс жауап: D. Ойын технологиясы химиялық мазмұнды меңгертуге, бекітуге және оқушы белсенділігін арттыруға қызмет етуі керек.</div>
+        </div>
+
+        <div class="question" data-answer="1,3,5">
+          <span class="question-note">Бірнеше дұрыс жауап</span>
+          <p>8. Қазіргі технологиялар қолданылған химия сабағындағы мұғалім рөлін таңдаңыз:</p>
+          <label class="option"><input type="checkbox" name="q6b8" value="0"> Дайын білімді біржақты хабарлаумен шектелу</label>
+          <label class="option"><input type="checkbox" name="q6b8" value="1"> Оқушының оқу әрекетін ұйымдастыру</label>
+          <label class="option"><input type="checkbox" name="q6b8" value="2"> Оқушының дербес ойлауын шектеу</label>
+          <label class="option"><input type="checkbox" name="q6b8" value="3"> Бағыттаушы сұрақтар мен қолдау ұсыну</label>
+          <label class="option"><input type="checkbox" name="q6b8" value="4"> Тапсырманы оқу нәтижесінен бөлек құрастыру</label>
+          <label class="option"><input type="checkbox" name="q6b8" value="5"> Нәтижені талдап, келесі оқу қадамын жоспарлау</label>
+          <div class="explain">Дұрыс жауаптар: B, D, F. Қазіргі технологияларда мұғалім ұйымдастырушы, бағыттаушы және нәтижені талдаушы рөл атқарады.</div>
+        </div>
+
+        <button class="check-btn" onclick="checkBlock('block6')">Тестті тексеру</button>
+      </div>
+    </section>
+
+    <div class="copyright-note">
+      © Назерке. Барлық құқық қорғалған. Материалды рұқсатсыз көшіруге,
+      сатуға, қайта таратуға немесе коммерциялық мақсатта қолдануға болмайды.
+    </div>
+
+    <footer>
+      Құрманәлиев М.Қ. · Химияны оқытудың қазіргі технологиялары · КТ-ға дайындық
+    </footer>
+
+  </div>
+
+  <script>
+    function openTab(event, blockId, tabName) {
+      const block = document.getElementById(blockId);
+      if (!block) return;
+
+      const contents = block.querySelectorAll(".tab-content");
+      const buttons = block.querySelectorAll(".mini-tabs button");
+
+      contents.forEach(content => content.classList.remove("active"));
+      buttons.forEach(button => button.classList.remove("active"));
+
+      const selected = block.querySelector('.tab-content[data-tab="' + tabName + '"]');
+      if (selected) selected.classList.add("active");
+
+      event.currentTarget.classList.add("active");
+    }
+
+    function arraysEqual(a, b) {
+      if (a.length !== b.length) return false;
+      const sortedA = [...a].sort();
+      const sortedB = [...b].sort();
+
+      for (let i = 0; i < sortedA.length; i++) {
+        if (sortedA[i] !== sortedB[i]) return false;
+      }
+
+      return true;
+    }
+
+    function checkBlock(blockId) {
+      const block = document.getElementById(blockId);
+      if (!block) return;
+
+      const questions = block.querySelectorAll(".question");
+      const result = block.querySelector(".result");
+
+      let correctCount = 0;
+      let answeredCount = 0;
+
+      questions.forEach(question => {
+        const correctAnswers = question.getAttribute("data-answer").split(",").map(item => item.trim());
+        const options = question.querySelectorAll(".option");
+        const explanation = question.querySelector(".explain");
+        const checkedInputs = question.querySelectorAll("input:checked");
+        const selectedAnswers = Array.from(checkedInputs).map(input => input.value);
+
+        options.forEach(option => option.classList.remove("correct", "wrong"));
+
+        if (explanation) explanation.classList.add("show");
+
+        options.forEach(option => {
+          const input = option.querySelector("input");
+          if (!input) return;
+
+          if (correctAnswers.includes(input.value)) {
+            option.classList.add("correct");
+          }
+
+          if (input.checked && !correctAnswers.includes(input.value)) {
+            option.classList.add("wrong");
+          }
+        });
+
+        if (selectedAnswers.length > 0) {
+          answeredCount++;
+
+          if (arraysEqual(selectedAnswers, correctAnswers)) {
+            correctCount++;
+          }
+        }
+      });
+
+      const total = questions.length;
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+      let message = "";
+      if (percent >= 90) {
+        message = "Өте жақсы нәтиже. Химияны оқытудың қазіргі технологиялары жақсы меңгерілген.";
+      } else if (percent >= 70) {
+        message = "Жақсы нәтиже. Қате кеткен сұрақтардың түсіндірмесін қайта қарап шық.";
+      } else if (percent >= 50) {
+        message = "Орташа нәтиже. Теория, тірек және термин бөлімдерін қайталау керек.";
+      } else {
+        message = "Бұл бөлімді қайта оқу қажет. Алдымен теорияны оқып, кейін тестті қайта орында.";
+      }
+
+      result.innerHTML =
+        '<div class="score">' + correctCount + ' / ' + total + '</div>' +
+        '<div>Жауап берілген сұрақтар: ' + answeredCount + ' / ' + total + '</div>' +
+        '<div>Нәтиже: ' + percent + '%</div>' +
+        '<p style="margin-top:8px;">' + message + '</p>';
+
+      result.classList.add("show");
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+  </script>
+</body>
+</html>
